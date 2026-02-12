@@ -1,6 +1,6 @@
 h1{
-    color: #ff6b6b;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Pacifico', cursive; /* Για τους τίτλους */
+    color: #d32f2f; /* Κόκκινο σκούρο αντί για μαύρο */
     align-items: center;
     align-content: center;
     text-align: center;
@@ -22,6 +22,7 @@ body{
     overflow-x: hidden;
     position: relative;
     width: 100%;
+    font-family: 'Fredoka One', cursive; /* Για τα κείμενα */
 }
 
 .card{

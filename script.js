@@ -4,10 +4,19 @@ const noButton = document.getElementById('no');
 const yesButton = document.getElementById('yes');
 const card = document.querySelector('.card');
 const noSound = document.getElementById('rejectSound');
-
+const atakes = [
+        "Μη το κάνεις αυτό...",
+        "Θα σου πάρω κρέπα!",
+        "Ραγίζεις την καρδιά μου 💔",
+        "Ζεν σες φιλάκιιιιι;;;",
+        "Δεν με αγαπάς...",
+        "Θα κλάψω...",
+        "Είσαι κακιά!",
+        "Σταμάτα να με αποφεύγεις!"
+    ];
 let keimeno1 = document.querySelector('header h1');
 let keimeno2 = document.getElementById('question');
-
+let scale = 1;
 let randomX, randomY;
 
 startBtn.addEventListener('click', () => {
@@ -25,8 +34,10 @@ const moveButton = () => {
     noSound.play();
 
     // Αλλαγή κειμένων
+    // Επιλογή τυχαίας ατάκας
+    const tixaiaAtaka = atakes[Math.floor(Math.random() * atakes.length)];
     keimeno1.textContent = 'Ναι καλά ιχ ιχ ιχ ιχ';
-    keimeno2.textContent = 'Παρε το λιλί μου!';
+    keimeno2.textContent = tixaiaAtaka;
 
     // Προετοιμασία
     document.body.appendChild(noButton);
@@ -74,6 +85,10 @@ const moveButton = () => {
     // Εφαρμογή
     noButton.style.left = `${randomX}px`;
     noButton.style.top = `${randomY}px`;
+
+    scale += 0.1; // Μεγαλώνει κατά 10% κάθε φορά
+    yesButton.style.transform = `scale(${scale})`;
+    yesButton.style.transition = 'transform 0.2s';
 };
 
 // Events
