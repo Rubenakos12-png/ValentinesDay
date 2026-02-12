@@ -1,0 +1,137 @@
+h1{
+    color: #ff6b6b;
+    font-family: 'Arial', sans-serif;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body{
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.card{
+    background-color: rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.card-img{
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+    position: relative;
+    height: 60px;
+}
+
+button{
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    touch-action: manipulation;
+}
+#yes{
+    background-color: #4CAF50;
+    color: white;
+    position: relative;
+}
+
+#yes:hover{
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+#no{
+    background-color: #ff4d4d;
+    color: white;
+    position: relative;
+}
+
+.heart {
+    position: fixed;
+    bottom: -10vh; /* Ξεκινάνε κάτω από την οθόνη */
+    z-index: -1; /* Πίσω από την κάρτα για να μην ενοχλούν */
+    animation: floatUp linear forwards; /* Η κίνηση που θα φτιάξουμε */
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg); /* Πάνε ψηλά και γυρίζουν */
+        opacity: 0; /* Εξαφανίζονται στο τέλος */
+    }
+}
+
+#start-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffc0cb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* ΠΡΟΣΘΗΚΗ: Ομαλή μετάβαση 0.8 δευτερολέπτων */
+    transition: opacity 0.8s ease, visibility 0.8s;
+    opacity: 1;
+    visibility: visible;
+}
+
+#start-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#start-btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff4d6d;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#start-btn:hover { 
+    background-color: #ff1a4d; 
+    transform: scale(1.1); 
+}
